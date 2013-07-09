@@ -1,0 +1,28 @@
+name:          hunf
+version:       0.0.1
+license:       BSD3
+author:        Anton Dubovik
+cabal-version: >= 1.8
+synopsis:      Universal Haskell Formatter
+build-type:    Simple
+category:      Text processing
+
+library
+  build-depends: 
+    base,
+    containers
+  hs-source-dirs: src
+  exposed-modules:
+    Hunf.Format
+  other-modules:
+  ghc-options: -Wall -Werror -O2
+
+executable hunf
+  build-depends: 
+    base,
+    containers
+  hs-source-dirs: src
+  main-is: Main.hs
+  ghc-options: -Wall -Werror -O2
+  other-modules:
+    Hunf.Format

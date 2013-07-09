@@ -1,4 +1,4 @@
 hunf
 ====
 
-Haskell Universal Formatter
+Universal Haskell Formatter
