@@ -1,4 +1,4 @@
-module Hunf.Format(format) where
+module Hunf.Format(format,showF) where
 
 import Data.Char
 
@@ -29,3 +29,6 @@ format = tabify False 0 .
     opens = "<{(["
     close = ">})]"
     delim = ",;"
+
+showF :: Show a => a -> String
+showF = format . show
