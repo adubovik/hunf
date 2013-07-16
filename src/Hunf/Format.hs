@@ -13,12 +13,8 @@ format = tabify False 0 .
       | c `elem` opens = c : tabify True (n+1) str
       | c `elem` delim = c : tabify True n str
       | c `elem` close = c : tabify False (n-1) str
-      | nl             = condTabs nl n ++ skipSpaces False n (c:str)
+      | nl             = condTabs nl n ++ tabify False n (dropWhile isSpace $ c:str)
       | otherwise      = c : tabify nl n str
-
-    skipSpaces nl n str = case dropWhile isSpace str of
-      (c:cs) -> c : tabify nl n cs
-      [] -> []
 
     condTabs nl n
       | nl = tabs n
